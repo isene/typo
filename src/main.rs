@@ -329,9 +329,9 @@ fn push_cell(out: &mut String, ch: char, st: CellState, err: bool) {
         CellState::Todo => out.push_str(&style::fg(&s, TODO_FG)),
         CellState::Current => {
             if err {
-                out.push_str(&format!("\x1b[38;5;{};7m{}\x1b[27;39m", ERR_FG, s));
+                out.push_str(&style::styled(&s, Some(ERR_FG), None, "r"));
             } else {
-                out.push_str(&format!("\x1b[7m{}\x1b[27m", s));
+                out.push_str(&style::reverse(&s));
             }
         }
     }
