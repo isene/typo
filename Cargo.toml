@@ -1,6 +1,6 @@
 [package]
 name = "typo"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["Geir Isene <g@isene.com>"]
 description = "Terminal touch-typing tutor. Part of the Fe2O3 suite, built on crust."
