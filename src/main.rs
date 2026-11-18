@@ -646,7 +646,7 @@ fn draw(ui: &mut Ui, header: &str, main: &str, footer: &str) {
     ui.header.refresh();
     ui.main.set_text(main);
     ui.main.refresh();
-    ui.footer.set_text(footer);
+    ui.footer.set_text(&crust::with_version(footer, ui.footer.w as usize, "typo", VERSION));
     ui.footer.refresh();
 }
 
@@ -1212,8 +1212,8 @@ fn main() {
         draw(
             &mut ui,
             &format!(
-                " TYPO v{} · touch typing tutor · {}",
-                VERSION, LAYOUTS[st.layout].label
+                " TYPO · touch typing tutor · {}",
+                LAYOUTS[st.layout].label
             ),
             &menu_text(&st, sel),
             " j/k move · 1-9 jump · g gradual · w weak · t test · T trend · l layout · q quit",
